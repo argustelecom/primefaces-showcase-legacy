@@ -2,28 +2,24 @@
 
 ![PrimeFaces icon](https://www.primefaces.org/wp-content/uploads/2016/10/prime_logo.png)
 
-### Getting Started
+### Введение
 
-Deployable version of **PrimeFaces Showcase** war file can be downloaded manually or build it from sources.  
+Демо библиотеки JSF компонентов PrimeFaces.
 
-##### Prebuilt war
+По умолчанию собирает версию для равёртывания в ear appserver. При этом не пакует в war lib зависимости, которые 
+уже есть в ear/lib. Чтобы не тормозить запуск ear у разработчика. Такая версия выложена в корпоративный репозиторий.
 
-For a full list of the available downloads, please visit the [download page](http://www.primefaces.org/downloads). Scroll down to showcase for war file link.
+Включена в профили appserver, предназначенные для разработчиков (не для заказчиков). Запускается вместе с web 
+приложениями Аргус. Доступен [http://localhost:8080/primefaces-showcase/](http://localhost:8080/primefaces-showcase)
 
-##### Build from sources
+##### Запуск отдельно
 
 ```
-git clone https://github.com/primefaces/showcase.git
+git clone https://github.com/argustelecom/primefaces-showcase-legacy
 cd showcase
 mvn clean                  -- clean temp files from target folder
-mvn package                -- create war file (under target directory)
-mvn jetty:run              -- run showcase project locally
-```
-
-##### Run from local sources
-
-```
-mvn clean jetty:run  
+mvn package -Pjetty        -- create war file (under target directory)
+mvn jetty:run -Pjetty      -- run showcase project locally
 ```
 
 [http://localhost:8080/showcase/](http://localhost:8080/showcase)
